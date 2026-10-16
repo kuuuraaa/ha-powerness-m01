@@ -1,0 +1,196 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Powerness M01 / EPP BES",
+        "description": "Wie soll der Speicher eingerichtet werden?",
+        "menu_options": {
+          "cloud": "Mit der Smart-Life-/Tuya-App anmelden (empfohlen)",
+          "manual": "Geräte-ID und Local Key manuell eingeben"
+        }
+      },
+      "cloud": {
+        "title": "Smart-Life-Anmeldung",
+        "description": "Öffne die Smart-Life- oder Tuya-Smart-App, gehe zu **Ich → Einstellungen → Konto und Sicherheit → Benutzercode** und gib den Code hier ein. Die Cloud wird nur einmal genutzt, um den Local Key auszulesen – danach läuft alles lokal.\n\n{msg}",
+        "data": {
+          "user_code": "Benutzercode"
+        }
+      },
+      "scan": {
+        "title": "QR-Code scannen",
+        "description": "Scanne diesen QR-Code mit der Smart-Life-/Tuya-App, bestätige die Anmeldung in der App und klicke dann auf **Absenden**."
+      },
+      "pick": {
+        "title": "Speicher auswählen",
+        "data": {
+          "device": "Gerät"
+        }
+      },
+      "locate": {
+        "title": "Speicher nicht im Netzwerk gefunden",
+        "description": "{name} hat sich nicht im Netzwerk gemeldet. Gib die IP-Adresse ein (siehe Router).",
+        "data": {
+          "host": "IP-Adresse",
+          "protocol_version": "Protokollversion"
+        }
+      },
+      "manual": {
+        "title": "Manuelle Einrichtung",
+        "description": "IP-Adresse leer lassen, um automatisch im Netzwerk zu suchen.",
+        "data": {
+          "name": "Name",
+          "device_id": "Geräte-ID",
+          "local_key": "Local Key",
+          "host": "IP-Adresse",
+          "protocol_version": "Protokollversion"
+        }
+      }
+    },
+    "error": {
+      "login_error": "Anmeldung fehlgeschlagen. Benutzercode prüfen und die Anmeldung in der App bestätigen.",
+      "cannot_connect": "Keine Verbindung zum Speicher. Ist noch eine andere Integration (z. B. LocalTuya) damit verbunden? Tuya-Geräte erlauben nur eine lokale Verbindung.",
+      "invalid_auth": "Der Speicher hat den Local Key abgelehnt.",
+      "not_found": "Speicher nicht im Netzwerk gefunden, bitte IP-Adresse eingeben.",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "abort": {
+      "already_configured": "Dieser Speicher ist bereits eingerichtet.",
+      "no_devices": "In diesem Konto wurden keine Geräte gefunden.",
+      "device_not_found": "Der Speicher wurde in diesem Konto nicht gefunden.",
+      "reauth_successful": "Der Local Key wurde aktualisiert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "keep_alive": "Live-Daten automatisch anfordern"
+        },
+        "data_description": {
+          "keep_alive": "Der Speicher sendet Live-Werte nur, solange die App offen ist. Mit dieser Option schickt die Integration dieselbe Anfrage, sobald die Daten veralten."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "soc": {
+        "name": "Ladezustand"
+      },
+      "voltage": {
+        "name": "Spannung"
+      },
+      "current": {
+        "name": "Strom"
+      },
+      "charge_power": {
+        "name": "Ladeleistung"
+      },
+      "discharge_power": {
+        "name": "Entladeleistung"
+      },
+      "pv_current": {
+        "name": "PV-Strom"
+      },
+      "pv_power": {
+        "name": "PV-Leistung"
+      },
+      "pv_energy_total": {
+        "name": "PV-Energie (Gerätezähler)"
+      },
+      "lifetime_charged": {
+        "name": "Geladene Energie (Gerätezähler)"
+      },
+      "lifetime_discharged": {
+        "name": "Entladene Energie (Gerätezähler)"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "battery_state": {
+        "name": "Batteriestatus",
+        "state": {
+          "charging": "Laden",
+          "discharging": "Entladen",
+          "standby": "Standby",
+          "unknown": "Unbekannt"
+        }
+      },
+      "schedule": {
+        "name": "Zeitplan",
+        "state": {
+          "charge": "Laden",
+          "discharge": "Entladen",
+          "charge_discharge": "Laden und Entladen",
+          "off": "Aus",
+          "permanent": "Dauerhaft (Schalter)"
+        }
+      },
+      "last_live_data": {
+        "name": "Letzte Live-Daten"
+      },
+      "energy_charged": {
+        "name": "Geladene Energie"
+      },
+      "energy_discharged": {
+        "name": "Entladene Energie"
+      },
+      "pv_energy": {
+        "name": "PV-Energie"
+      }
+    },
+    "switch": {
+      "charging": {
+        "name": "Dauerhaft laden"
+      },
+      "discharging": {
+        "name": "Dauerhaft entladen"
+      }
+    },
+    "button": {
+      "request_live_data": {
+        "name": "Live-Daten anfordern"
+      }
+    },
+    "binary_sensor": {
+      "alarm": {
+        "name": "Alarm"
+      }
+    },
+    "time": {
+      "slot_start": {
+        "name": "Zeitraum {slot} von"
+      },
+      "slot_end": {
+        "name": "Zeitraum {slot} bis"
+      }
+    },
+    "select": {
+      "slot_mode": {
+        "name": "Zeitraum {slot} Modus",
+        "state": {
+          "off": "Aus",
+          "charge": "Laden",
+          "discharge": "Entladen",
+          "charge_discharge": "Laden und Entladen"
+        }
+      }
+    }
+  },
+  "services": {
+    "set_schedule": {
+      "name": "Zeitplan setzen",
+      "description": "Ersetzt den Zeitplan des Speichers durch bis zu vier Zeiträume. Der Zeitplan gilt nur, solange beide Dauerhaft-Schalter aus sind.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Speicher",
+          "description": "Der Speicher, der eingestellt wird."
+        },
+        "periods": {
+          "name": "Zeiträume",
+          "description": "Bis zu vier Zeiträume mit start, end (HH:MM, 23:59 für Mitternacht) und mode (charge = Laden, discharge = Entladen)."
+        }
+      }
+    }
+  }
+}

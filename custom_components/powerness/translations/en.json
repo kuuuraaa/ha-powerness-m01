@@ -1,0 +1,196 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Powerness M01 / EPP BES",
+        "description": "How do you want to set up the battery?",
+        "menu_options": {
+          "cloud": "Log in with the Smart Life / Tuya app (recommended)",
+          "manual": "Enter device ID and local key manually"
+        }
+      },
+      "cloud": {
+        "title": "Smart Life login",
+        "description": "Open the Smart Life or Tuya Smart app, go to **Me → Settings → Account and Security → User Code** and enter the code here. The cloud is only used once to read the local key, the battery is then controlled locally.\n\n{msg}",
+        "data": {
+          "user_code": "User code"
+        }
+      },
+      "scan": {
+        "title": "Scan QR code",
+        "description": "Scan this QR code with the Smart Life / Tuya app, confirm the login in the app and then press **Submit**."
+      },
+      "pick": {
+        "title": "Choose the battery",
+        "data": {
+          "device": "Device"
+        }
+      },
+      "locate": {
+        "title": "Battery not found on the network",
+        "description": "{name} did not announce itself on the network. Enter its IP address (see your router).",
+        "data": {
+          "host": "IP address",
+          "protocol_version": "Protocol version"
+        }
+      },
+      "manual": {
+        "title": "Manual setup",
+        "description": "Leave the IP address empty to search the network automatically.",
+        "data": {
+          "name": "Name",
+          "device_id": "Device ID",
+          "local_key": "Local key",
+          "host": "IP address",
+          "protocol_version": "Protocol version"
+        }
+      }
+    },
+    "error": {
+      "login_error": "Login failed. Check the user code and confirm the login in the app.",
+      "cannot_connect": "Cannot connect to the battery. Is another integration (e.g. LocalTuya) connected to it? Tuya devices accept only one local connection.",
+      "invalid_auth": "The battery rejected the local key.",
+      "not_found": "The battery was not found on the network, please enter the IP address.",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This battery is already configured.",
+      "no_devices": "No devices found in this account.",
+      "device_not_found": "The battery was not found in this account.",
+      "reauth_successful": "The local key was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "keep_alive": "Request live data automatically"
+        },
+        "data_description": {
+          "keep_alive": "The battery only streams live values while the app is open. With this option the integration sends the same request whenever the data goes stale."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "soc": {
+        "name": "State of charge"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "current": {
+        "name": "Current"
+      },
+      "charge_power": {
+        "name": "Charge power"
+      },
+      "discharge_power": {
+        "name": "Discharge power"
+      },
+      "pv_current": {
+        "name": "PV current"
+      },
+      "pv_power": {
+        "name": "PV power"
+      },
+      "pv_energy_total": {
+        "name": "PV energy (device total)"
+      },
+      "lifetime_charged": {
+        "name": "Charged energy (device total)"
+      },
+      "lifetime_discharged": {
+        "name": "Discharged energy (device total)"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "battery_state": {
+        "name": "Battery state",
+        "state": {
+          "charging": "Charging",
+          "discharging": "Discharging",
+          "standby": "Standby",
+          "unknown": "Unknown"
+        }
+      },
+      "schedule": {
+        "name": "Time schedule",
+        "state": {
+          "charge": "Charging",
+          "discharge": "Discharging",
+          "charge_discharge": "Charging and discharging",
+          "off": "Off",
+          "permanent": "Permanent (switch)"
+        }
+      },
+      "last_live_data": {
+        "name": "Last live data"
+      },
+      "energy_charged": {
+        "name": "Charged energy"
+      },
+      "energy_discharged": {
+        "name": "Discharged energy"
+      },
+      "pv_energy": {
+        "name": "PV energy"
+      }
+    },
+    "switch": {
+      "charging": {
+        "name": "Charge permanently"
+      },
+      "discharging": {
+        "name": "Discharge permanently"
+      }
+    },
+    "button": {
+      "request_live_data": {
+        "name": "Request live data"
+      }
+    },
+    "binary_sensor": {
+      "alarm": {
+        "name": "Alarm"
+      }
+    },
+    "time": {
+      "slot_start": {
+        "name": "Period {slot} from"
+      },
+      "slot_end": {
+        "name": "Period {slot} until"
+      }
+    },
+    "select": {
+      "slot_mode": {
+        "name": "Period {slot} mode",
+        "state": {
+          "off": "Off",
+          "charge": "Charge",
+          "discharge": "Discharge",
+          "charge_discharge": "Charge and discharge"
+        }
+      }
+    }
+  },
+  "services": {
+    "set_schedule": {
+      "name": "Set schedule",
+      "description": "Replaces the battery's time schedule with up to four periods. The schedule only applies while both permanent switches are off.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Battery",
+          "description": "The battery to configure."
+        },
+        "periods": {
+          "name": "Periods",
+          "description": "Up to four periods with start, end (HH:MM, 23:59 for midnight) and mode (charge or discharge)."
+        }
+      }
+    }
+  }
+}

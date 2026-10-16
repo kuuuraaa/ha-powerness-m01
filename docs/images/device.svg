@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 60 620 250" role="img" aria-labelledby="t">
+  <title id="t">Balkonkraftwerk-Speicher M01 in Grau und Schwarz</title>
+  <defs>
+    <linearGradient id="fins" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d7dadd"/>
+      <stop offset="1" stop-color="#b3b7bb"/>
+    </linearGradient>
+    <linearGradient id="greyBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b9bcbf"/>
+      <stop offset="0.12" stop-color="#cdd0d3"/>
+      <stop offset="0.88" stop-color="#c7cacd"/>
+      <stop offset="1" stop-color="#aeb2b5"/>
+    </linearGradient>
+    <linearGradient id="blackBody" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b0b0c"/>
+      <stop offset="0.12" stop-color="#1c1d1f"/>
+      <stop offset="0.88" stop-color="#18191b"/>
+      <stop offset="1" stop-color="#060607"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a3a7ab"/>
+      <stop offset="1" stop-color="#7e8286"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- One battery unit, 300 x 190, origin top left -->
+    <g id="fin-row">
+      <rect x="0" y="0" width="300" height="34" rx="9" fill="url(#fins)"/>
+      <g stroke="#9ea3a8" stroke-width="2">
+        <line x1="14" y1="4" x2="14" y2="32"/><line x1="25" y1="4" x2="25" y2="32"/>
+        <line x1="36" y1="4" x2="36" y2="32"/><line x1="47" y1="4" x2="47" y2="32"/>
+        <line x1="58" y1="4" x2="58" y2="32"/><line x1="69" y1="4" x2="69" y2="32"/>
+        <line x1="80" y1="4" x2="80" y2="32"/><line x1="91" y1="4" x2="91" y2="32"/>
+        <line x1="102" y1="4" x2="102" y2="32"/><line x1="113" y1="4" x2="113" y2="32"/>
+        <line x1="124" y1="4" x2="124" y2="32"/><line x1="135" y1="4" x2="135" y2="32"/>
+        <line x1="146" y1="4" x2="146" y2="32"/><line x1="157" y1="4" x2="157" y2="32"/>
+        <line x1="168" y1="4" x2="168" y2="32"/><line x1="179" y1="4" x2="179" y2="32"/>
+        <line x1="190" y1="4" x2="190" y2="32"/><line x1="201" y1="4" x2="201" y2="32"/>
+        <line x1="212" y1="4" x2="212" y2="32"/><line x1="223" y1="4" x2="223" y2="32"/>
+        <line x1="234" y1="4" x2="234" y2="32"/><line x1="245" y1="4" x2="245" y2="32"/>
+        <line x1="256" y1="4" x2="256" y2="32"/><line x1="267" y1="4" x2="267" y2="32"/>
+        <line x1="278" y1="4" x2="278" y2="32"/><line x1="289" y1="4" x2="289" y2="32"/>
+      </g>
+      <rect x="0" y="0" width="300" height="5" rx="2.5" fill="#e4e6e8"/>
+    </g>
+    <g id="display">
+      <rect x="0" y="0" width="74" height="36" rx="6" fill="#050505"/>
+      <!-- battery icon -->
+      <rect x="15" y="10" width="26" height="12" rx="2" fill="none" stroke="#f2f2f2" stroke-width="1.6"/>
+      <rect x="41" y="13.5" width="2.5" height="5" rx="1" fill="#f2f2f2"/>
+      <g fill="#f2f2f2">
+        <rect x="17.5" y="12.5" width="4.5" height="7"/><rect x="23.5" y="12.5" width="4.5" height="7"/>
+        <rect x="29.5" y="12.5" width="4.5" height="7"/><rect x="35.5" y="12.5" width="4" height="7"/>
+      </g>
+      <!-- wifi icon -->
+      <g fill="none" stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round">
+        <path d="M51 15 q7 -6 14 0"/><path d="M53.5 18 q4.5 -3.6 9 0"/>
+      </g>
+      <circle cx="58" cy="21" r="1.4" fill="#f2f2f2"/>
+      <rect x="18" y="26.5" width="38" height="2.4" rx="1.2" fill="#c9a24a"/>
+    </g>
+  </defs>
+
+  <!-- Grey unit (back) -->
+  <g transform="translate(70 70)">
+    <ellipse cx="150" cy="196" rx="165" ry="14" fill="url(#shadow)"/>
+    <use href="#fin-row"/>
+    <rect x="2" y="30" width="296" height="148" rx="14" fill="url(#greyBody)"/>
+    <rect x="6" y="170" width="288" height="16" rx="8" fill="url(#base)"/>
+    <use href="#display" x="113" y="82"/>
+  </g>
+
+  <!-- Black unit (front) -->
+  <g transform="translate(350 96)">
+    <ellipse cx="150" cy="196" rx="165" ry="14" fill="url(#shadow)"/>
+    <use href="#fin-row"/>
+    <rect x="2" y="30" width="296" height="148" rx="14" fill="url(#blackBody)"/>
+    <rect x="6" y="170" width="288" height="16" rx="8" fill="url(#base)"/>
+    <use href="#display" x="113" y="82"/>
+  </g>
+</svg>

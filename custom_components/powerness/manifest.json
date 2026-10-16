@@ -1,0 +1,13 @@
+{
+  "domain": "powerness",
+  "name": "Powerness M01 / EPP BES Battery",
+  "codeowners": ["@kuuuraaa"],
+  "config_flow": true,
+  "documentation": "https://github.com/kuuuraaa/ha-powerness-m01",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/kuuuraaa/ha-powerness-m01/issues",
+  "loggers": ["custom_components.powerness"],
+  "requirements": ["tuya-device-sharing-sdk>=0.2.1"],
+  "version": "0.3.3"
+}

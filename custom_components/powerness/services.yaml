@@ -1,0 +1,14 @@
+set_schedule:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: powerness
+    periods:
+      required: true
+      example: >-
+        [{"start": "01:00", "end": "02:00", "mode": "charge"},
+        {"start": "02:00", "end": "03:00", "mode": "discharge"}]
+      selector:
+        object:
