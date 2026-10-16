@@ -1,4 +1,9 @@
-"""Minimal asyncio client for the Tuya local protocol (3.3 and 3.4)."""
+"""Minimal asyncio client for the Tuya local protocol (3.3 and 3.4).
+
+Own implementation, written from the protocol details documented by tinytuya
+(https://github.com/jasonacox/tinytuya) and LocalTuya
+(https://github.com/rospogrigio/localtuya).
+"""
 
 from __future__ import annotations
 

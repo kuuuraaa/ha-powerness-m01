@@ -339,6 +339,24 @@ Push-Meldungen. Die Testdaten stammen von einem echten M01 (Seriennummer anonymi
 Beiträge sind willkommen – besonders Daten von anderen Speichern, mehreren Akkus oder
 aktiven Alarmen.
 
+## Danksagung
+
+Diese Integration wäre ohne die Arbeit anderer Projekte nicht möglich gewesen – vielen Dank an
+alle Entwicklerinnen und Entwickler dahinter!
+
+| Projekt | Was wir davon haben |
+|---|---|
+| [Home Assistant – Tuya-Integration](https://github.com/home-assistant/core/tree/dev/homeassistant/components/tuya) | Der QR-Code-Login über die Smart-Life-App ist an deren Config-Flow angelehnt und nutzt denselben öffentlichen Client. |
+| [tuya-device-sharing-sdk](https://github.com/tuya/tuya-device-sharing-sdk) von Tuya | Bibliothek für den Login und das Abholen von Geräte-ID und Local Key. |
+| [tinytuya](https://github.com/jasonacox/tinytuya) von Jason Cox | Die gründlichste Dokumentation des lokalen Tuya-Protokolls (Frames, Session-Key-Handshake von 3.4, UDP-Discovery) – Grundlage für unseren eigenen asynchronen Protokoll-Client. |
+| [LocalTuya](https://github.com/rospogrigio/localtuya) von rospogrigio und Mitwirkenden | Hat gezeigt, wie man Tuya-Geräte lokal in Home Assistant betreibt; damit wurde der Wake-Befehl für die Live-Daten gefunden und getestet. |
+| [Xtend Tuya](https://github.com/azerty9971/xtend_tuya) von azerty9971 | Hat die Datenpunkte des Speichers überhaupt erst sichtbar gemacht – deren Diagnose war der Startpunkt fürs Entschlüsseln. |
+| [pytest-homeassistant-custom-component](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component) von Matthew Flamm | Testumgebung für Custom Integrations. |
+| [HACS](https://hacs.xyz) | Verteilung und Updates. |
+
+Code aus LocalTuya, Xtend Tuya oder tinytuya wurde nicht übernommen; der Protokoll-Client
+ist eine eigene Implementierung auf Basis der dort dokumentierten Protokolldetails.
+
 ## Hinweis
 
 Dies ist ein privates Community-Projekt und steht in keiner Verbindung zu Powerness, EPP,

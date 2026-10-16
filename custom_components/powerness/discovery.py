@@ -1,4 +1,8 @@
-"""Find Tuya devices on the LAN via their UDP broadcasts."""
+"""Find Tuya devices on the LAN via their UDP broadcasts.
+
+Broadcast format and key as documented by tinytuya
+(https://github.com/jasonacox/tinytuya).
+"""
 
 from __future__ import annotations
 

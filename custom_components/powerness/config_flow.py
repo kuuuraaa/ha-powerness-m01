@@ -1,4 +1,8 @@
-"""Config flow: Smart Life QR login to fetch the local key, then local setup."""
+"""Config flow: Smart Life QR login to fetch the local key, then local setup.
+
+The QR login steps are adapted from the Home Assistant core Tuya integration
+(https://github.com/home-assistant/core, Apache-2.0).
+"""
 
 from __future__ import annotations
 
