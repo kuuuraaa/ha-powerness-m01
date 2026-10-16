@@ -35,6 +35,11 @@ def auto_enable_custom_integrations(enable_custom_integrations: None) -> None:
     """Enable loading the integration."""
 
 
+@pytest.fixture(autouse=True)
+def allow_sockets(socket_enabled: None) -> None:
+    """The tests talk to a fake battery on localhost; LAN discovery is patched."""
+
+
 @pytest.fixture
 async def fake_battery() -> AsyncGenerator[FakeBattery]:
     """A fake battery on localhost; the coordinator is pointed at it."""
