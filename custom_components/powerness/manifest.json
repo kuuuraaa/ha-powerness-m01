@@ -9,5 +9,5 @@
   "issue_tracker": "https://github.com/kuuuraaa/ha-powerness-m01/issues",
   "loggers": ["custom_components.powerness"],
   "requirements": ["tuya-device-sharing-sdk>=0.2.1"],
-  "version": "0.3.3"
+  "version": "0.3.4"
 }
